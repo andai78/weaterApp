@@ -19,4 +19,8 @@ export class CityWidgetComponent implements OnInit {
      this.cities = this._apiServ.getCity()
   }
 
+  /*delete(){
+    this._apiServ.deleteCityWidget()
+  }*/
+
 }

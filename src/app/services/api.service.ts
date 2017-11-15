@@ -33,4 +33,8 @@ export class ApiService {
     this.cities.push(c);
   }
 
+  deleteCityWidget(c:City){
+      this.cities.splice(this.cities.indexOf(c), 1);
+  }
+
 }
