@@ -1,0 +1,10 @@
+<article class="weather-element" *ngFor="let c of cities">
+  <div class="col-1">
+      <h3>{{ c._name }}</h3>
+      <p class="info">description</p>
+  </div>
+  <div class="col-2">
+      <span class="temperature">{{ c._temp }}°C</span>
+  </div>
+  <button>Remove</button>
+</article>
