@@ -13,6 +13,7 @@ import { City } from '../city';
 export class SettingsComponent implements OnInit {
 
   form:FormGroup;
+  name: string = '';
 
   constructor(private formBuilder:FormBuilder, private _apiServ:ApiService) { }
 
@@ -22,6 +23,11 @@ export class SettingsComponent implements OnInit {
       temperature: 0,
       description: ''
     });
+  }
+
+  search(){
+    //console.log(this.name);
+    this._apiServ.searchCity(this.name).subscribe(resp => console.log(resp.json()));
   }
 
   addCity(){

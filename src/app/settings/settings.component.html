@@ -1,8 +1,9 @@
 <div class="panel-body">
-  <form [formGroup]="form" (ngSubmit)="addCity()">
+  <form [formGroup]="form" (ngSubmit)="search()">
     <div class="form-group col-sm-6">
       <label for="name">city</label>
       <input type="text" 
+              [(ngModel)]="name"
               name="name"
               class="form-control" 
               formControlName="name">

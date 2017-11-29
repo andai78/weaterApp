@@ -8,25 +8,23 @@ import { Observable } from 'rxjs/Observable';
 
 import { City } from '../city';
 
+const URL = 'http://api.openweathermap.org/data/2.5/weather';
+const APPID = '8cc3c8884452338cb80849d7bc36a91a';
+
 @Injectable()
 export class ApiService {
 
   data:any;
-  cities:City[] = [
-   new City ("London",20,"biyziz  zriiz"), new City ("Paris",25,"biyziz  zriiz"), new City ("Kinshasa",32,"biyziz  zriiz")
-  ]
+  cities:City[] = [];
 
   constructor(private _http:Http) { }
 
   getCity(){
-      /*return this._http.get('http://samples.openweathermap.org/data/2.5/weather?q=Paris&appid=8cc3c8884452338cb80849d7bc36a91a')
-      .map(response => response.json())
-      .catch(error => {
-        console.error(error);
-        return Observable.throw(error.json())
-    });*/
-    console.log(this.cities);
-      return this.cities;
+      //return this._http.get('http://api.openweathermap.org/data/2.5/weather?q=Poitiers,fr&appid=8cc3c8884452338cb80849d7bc36a91a')
+  }
+
+  searchCity(name:string){
+    return this._http.get(`${URL}?q=${name}&appid=${APPID}`) 
   }
 
   addCityWidget(c:City){
