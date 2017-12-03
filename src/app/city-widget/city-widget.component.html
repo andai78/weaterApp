@@ -1,3 +1,4 @@
+<p *ngIf="cities.length == 0">Vous n'avez actuellement aucun widget</p>
 <article class="weather-element" *ngFor="let c of cities">
   <div class="col-1">
       <h3>{{ c._name }}</h3>

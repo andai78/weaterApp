@@ -28,6 +28,7 @@ export class SettingsComponent implements OnInit {
   search(){
     this._apiServ.searchCity(this.name).subscribe(
       resp => {
+        console.log(resp.json());
         this.city = new City(resp.json().name, resp.json().main.temp)
       },
       error => {
