@@ -14,13 +14,12 @@ const APPID = '8cc3c8884452338cb80849d7bc36a91a';
 @Injectable()
 export class ApiService {
 
-  data:any;
   cities:City[] = [];
 
   constructor(private _http:Http) { }
 
   getCity(){
-      //return this._http.get('http://api.openweathermap.org/data/2.5/weather?q=Poitiers,fr&appid=8cc3c8884452338cb80849d7bc36a91a')
+    return this.cities;
   }
 
   searchCity(name:string){

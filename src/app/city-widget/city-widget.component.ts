@@ -16,7 +16,7 @@ export class CityWidgetComponent implements OnInit {
   cities:City[];
 
   ngOnInit() {
-     //this.cities = this._apiServ.getCity()
+     this.cities = this._apiServ.getCity()
      //this._apiServ.getCity().subscribe(resp => console.log(resp.json()))
   }
 

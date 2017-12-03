@@ -1,6 +1,11 @@
 export class City {
-    /*name:string;
+
+    name:string;
     temperature:number;
-    description:string;*/
-    constructor(public _name:string, public _temp: number, public _desc: string){}
+
+    constructor(public _name:string, public _temp: number)
+    {
+        this.name = _name;
+        this.temperature = _temp;
+    }
 }

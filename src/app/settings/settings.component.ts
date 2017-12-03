@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { ApiService } from '../services/api.service';
@@ -14,26 +14,31 @@ export class SettingsComponent implements OnInit {
 
   form:FormGroup;
   name: string = '';
+  city:City;
+  showMsg:Boolean = false;
 
   constructor(private formBuilder:FormBuilder, private _apiServ:ApiService) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      name: '',
-      temperature: 0,
-      description: ''
+      name: ''
     });
   }
 
   search(){
-    //console.log(this.name);
-    this._apiServ.searchCity(this.name).subscribe(resp => console.log(resp.json()));
+    this._apiServ.searchCity(this.name).subscribe(
+      resp => {
+        this.city = new City(resp.json().name, resp.json().main.temp)
+      },
+      error => {
+        console.log(error)
+      },
+      () => {
+        this._apiServ.addCityWidget(this.city);
+      }
+    );
+  
   }
 
-  addCity(){
-    const newItem = new City(this.form.value.name, this.form.value.temperature, this.form.value.description);
-    this._apiServ.addCityWidget(newItem);
-    console.log(this.form.value);
-  }
 
 }
