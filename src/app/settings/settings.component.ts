@@ -35,6 +35,7 @@ export class SettingsComponent implements OnInit {
       },
       () => {
         this._apiServ.addCityWidget(this.city);
+        this.showMsg = true;
       }
     );
   

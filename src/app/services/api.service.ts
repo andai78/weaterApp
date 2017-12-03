@@ -23,7 +23,7 @@ export class ApiService {
   }
 
   searchCity(name:string){
-    return this._http.get(`${URL}?q=${name}&appid=${APPID}`) 
+    return this._http.get(`${URL}?q=${name}&appid=${APPID}&units=metric`) 
   }
 
   addCityWidget(c:City){

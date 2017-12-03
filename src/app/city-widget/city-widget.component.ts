@@ -17,12 +17,10 @@ export class CityWidgetComponent implements OnInit {
 
   ngOnInit() {
      this.cities = this._apiServ.getCity()
-     //this._apiServ.getCity().subscribe(resp => console.log(resp.json()))
   }
 
   delete(city){
     this._apiServ.deleteCityWidget(city);
-    console.log(city)
   }
 
 }
